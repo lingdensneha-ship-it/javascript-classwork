@@ -57,8 +57,43 @@ function print5(){
     
     print5();
     print5();
-    */
     
+
+function myLoadFunction(){
+    var element=document.getElementById('crl');
+    element.style.backgroundColor='red';
+}
+
+function hi(){
+    var element=document.getElementById('crl');
+    element.addEventListener('click',myLoadFunction);
+}
+document.addEventListener('DOMContentLoaded',hi);*/
+
+function myLoadFunction() {
+  var element = document.getElementById('crl');
+  
+  // Initialize opacity if not set
+  if (!element.style.opacity) {
+    element.style.opacity = '1';
+  }
+  
+  // Read current opacity and convert to number
+  var currentOpacity = parseFloat(element.style.opacity);
+  
+  // Decrease opacity if it is above 0
+  if (currentOpacity > 0) {
+    element.style.opacity = (currentOpacity - 0.1).toFixed(1);
+  }
+}
+
+function hi() {
+  var element = document.getElementById('crl');
+  element.addEventListener('click', myLoadFunction);
+}
+
+document.addEventListener('DOMContentLoaded', hi);
+
 
     
 
