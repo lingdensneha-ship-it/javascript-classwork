@@ -26,7 +26,7 @@ function showFullName(){
     alert(firstName + " " + lastName);
 }
 showFullName();*/
-function print5(){
+/*function print5(){
 
     console.log(1);
     
@@ -56,21 +56,32 @@ function print5(){
 }
     
     print5();
-    print5();
+    print5();*/
     
 
 function myLoadFunction(){
     var element=document.getElementById('crl');
-    element.style.backgroundColor='red';
+    //var circleOpacity=parseFloat(element.style.opacity);
+    //alert(circleOpacity);
+    //element.style.opacity=circleOpacity+0.5;
+    //var positionLeft = element.offsetLeft;
+     var positionTop = element.offsetTop;
+    //alert(positionLeft);
+
+    //element.style.left=positionLeft + 10 + 'px';
+    element.style.top=positionTop + 10 + 'px';
+   
 }
 
 function hi(){
     var element=document.getElementById('crl');
+    //element.style.opacity=0;
     element.addEventListener('click',myLoadFunction);
+    //setInterval(myLoadFunction,1000);
 }
-document.addEventListener('DOMContentLoaded',hi);*/
+document.addEventListener('DOMContentLoaded',hi);
 
-function myLoadFunction() {
+/*function myLoadFunction(){
   var element = document.getElementById('crl');
   
   // Initialize opacity if not set
@@ -92,7 +103,7 @@ function hi() {
   element.addEventListener('click', myLoadFunction);
 }
 
-document.addEventListener('DOMContentLoaded', hi);
+document.addEventListener('DOMContentLoaded', hi);*/
 
 
     
