@@ -57,27 +57,99 @@ showFullName();*/
     
     print5();
     print5();*/
-    
-
-function myLoadFunction(){
+//var innerHeight=0;
+//var innerWidth=0;
+//var dx=0;
+//var dy=0;  
+//var moveTimer=null;
+function myLoadFunction(event){
+    //alert(window.innerWidth);
+    //alert(window.innerHeight);
     var element=document.getElementById('crl');
     //var circleOpacity=parseFloat(element.style.opacity);
     //alert(circleOpacity);
     //element.style.opacity=circleOpacity+0.5;
-    //var positionLeft = element.offsetLeft;
-     var positionTop = element.offsetTop;
+    var positionLeft = element.offsetLeft;
+    var positionTop = element.offsetTop;
+    var elementWidth= element.offsetWidth;
+    var elementHeight=element.offsetHeight;
     //alert(positionLeft);
 
-    //element.style.left=positionLeft + 10 + 'px';
-    element.style.top=positionTop + 10 + 'px';
+    //element.style.left=positionLeft - 10 + 'px';
+    //element.style.top=positionTop + 10 + 'px';
+    
+    if(event.keyCode == 37){
+        //dx=-10;
+        //dy=0;
+        // var positionLeft = element.offsetLeft;
+        if (positionLeft - 10 >= 0){
+            element.style.left=positionLeft - 10 + 'px';
+        }
+        
+     
+    }
+    if(event.keyCode == 38){
+        //dx=0;
+        //dy=-10;
+        // var positionTop = element.offsetTop;
+        if (positionTop - 10 >= 0){
+            element.style.top=positionTop - 10 + 'px';
+        }
+
+    }
+    
+    
+    if(event.keyCode == 39){
+        //dx=10;
+        //dy=0;
+        // var positionLeft = element.offsetLeft;
+        if (positionLeft + elementWidth + 10 <= window.innerWidth){
+            element.style.left=positionLeft + 10 + 'px';
+        }
+
+    }
+    if(event.keyCode == 40){
+        //dx=0;
+        //dy=10;
+       // var positionTop = element.offsetTop;
+       if (positionTop + elementHeight + 10 <= window.innerHeight){
+           element.style.top=positionTop + 10 + 'px';
+       } 
+    }
+    /*if(event.keyCode == 32){
+        event.preventDefault(); // Prevents the page from scrolling down
+        dx = 0;
+        dy = 0;
+    }
+    
+    /*alert(event.keyCode)*/
    
 }
+/*function continuousMove() {
+    var element = document.getElementById('crl');
+    if (!element) return;
+
+    // Only update position if a key has been pressed
+    if (dx !== 0 || dy !== 0) {
+        var positionLeft = element.offsetLeft;
+        var positionTop = element.offsetTop;
+        
+        element.style.left = (positionLeft + dx) + 'px';
+        element.style.top = (positionTop + dy) + 'px';
+    }
+}*/
+
+
 
 function hi(){
     var element=document.getElementById('crl');
     //element.style.opacity=0;
-    element.addEventListener('click',myLoadFunction);
+    element.style.position='absolute';
+    //element.addEventListener('click',myLoadFunction);
+    document.addEventListener('keydown',myLoadFunction);
+    //document.addEventListener('keyup',myLoadFunction);
     //setInterval(myLoadFunction,1000);
+    //moveTimer=setInterval(continuousMove,20);
 }
 document.addEventListener('DOMContentLoaded',hi);
 
