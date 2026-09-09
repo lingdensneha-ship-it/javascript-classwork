@@ -62,14 +62,39 @@ showFullName();*/
 //var dx=0;
 //var dy=0;  
 //var moveTimer=null;
+/*var leftPressed = false;
+function myKeyDown(event){
+    if (event.keyCode == 37){
+        leftPressed = true;
+    }
+}
+function myKeyUp(event){
+    if (event.keyCode == 37){
+        leftPressed = false;
+    }
+}*/
+
 function myLoadFunction(event){
+    // alert();
+//function moveInterval(){
+    var botton=document.getElementById('circle');
+    botton.className = 'circle';
+}
+
+/*if(leftPressed == true){
+        var element=document.getElementById('crcl');
+        var positionLeft = parsefloat(element.offsetLeft);
+        element.style.left=positionLeft - 10 + 'px';
+        
+    }
     //alert(window.innerWidth);
     //alert(window.innerHeight);
-    var element=document.getElementById('crl');
+    //var element=document.getElementById('crl');
+    
     //var circleOpacity=parseFloat(element.style.opacity);
     //alert(circleOpacity);
     //element.style.opacity=circleOpacity+0.5;
-    var positionLeft = element.offsetLeft;
+    /*var positionLeft = element.offsetLeft;
     var positionTop = element.offsetTop;
     var elementWidth= element.offsetWidth;
     var elementHeight=element.offsetHeight;
@@ -83,6 +108,7 @@ function myLoadFunction(event){
         //dy=0;
         // var positionLeft = element.offsetLeft;
         if (positionLeft - 10 >= 0){
+            
             element.style.left=positionLeft - 10 + 'px';
         }
         
@@ -124,7 +150,7 @@ function myLoadFunction(event){
     
     /*alert(event.keyCode)*/
    
-}
+//}
 /*function continuousMove() {
     var element = document.getElementById('crl');
     if (!element) return;
@@ -142,12 +168,14 @@ function myLoadFunction(event){
 
 
 function hi(){
-    var element=document.getElementById('crl');
+    var element=document.getElementById('circle');
     //element.style.opacity=0;
-    element.style.position='absolute';
-    //element.addEventListener('click',myLoadFunction);
-    document.addEventListener('keydown',myLoadFunction);
+    //element.style.position='absolute';
+    element.addEventListener('click',myLoadFunction);
+    //document.addEventListener('keydown',myLoadFunction);
+    //document.addEventListener('keydown',myKeyDown);
     //document.addEventListener('keyup',myLoadFunction);
+    //document.addEventListener('keyup',myKeyUp);
     //setInterval(myLoadFunction,1000);
     //moveTimer=setInterval(continuousMove,20);
 }
