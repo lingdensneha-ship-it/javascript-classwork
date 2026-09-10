@@ -74,7 +74,7 @@ function myKeyUp(event){
     }
 }*/
 
-function myLoadFunction(event){
+/*function myLoadFunction(event){
     // alert();
 //function moveInterval(){
     var botton=document.getElementById('circle');
@@ -167,7 +167,7 @@ function myLoadFunction(event){
 
 
 
-function hi(){
+/*function hi(){
     var element=document.getElementById('circle');
     //element.style.opacity=0;
     //element.style.position='absolute';
@@ -204,7 +204,41 @@ function hi() {
 }
 
 document.addEventListener('DOMContentLoaded', hi);*/
+//function myLoadFunction(){
+   /*var element=document.getElementById('Circle');
+    for(var i=0;i<10;i++){
+        console.log(i);
+    }
+}
+myLoadFunction();*/
+/*function myLoadFunction(){
+    var elements = document.getElementsByTagName('button');
+    elements[0].addEventListener('click',changeColor);
+    elements[1].addEventListener('click',changeColor);
+    elements[2].addEventListener('click',changeColor);
+    elements[3].addEventListener('click',changeColor);
+    elements[4].addEventListener('click',changeColor);
+}
+    */
+function myLoadFunction(){
+    var elements = document.getElementsByTagName('button');
+    for(var i=0;i<5;i++){
+        elements[i].addEventListener('click',changeColor);
+    }
 
+}
+function changeColor(){
+    var elements = document.getElementsByTagName('body')[0];
+     elements.style.backgroundColor=this.id;
+    // elements[1].style.backgroundColor=this.id;
+    // elements[2].style.backgroundColor=this.id;
+    // elements[3].style.backgroundColor=this.id;
+    // elements[4].style.backgroundColor=this.id;
+    
+
+
+}
+document.addEventListener('DOMContentLoaded',myLoadFunction)
 
     
 
