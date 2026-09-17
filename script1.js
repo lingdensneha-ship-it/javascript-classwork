@@ -228,8 +228,13 @@ function myLoadFunction(){
 
 }
 function changeColor(){
-    var elements = document.getElementsByTagName('body')[0];
-     elements.style.backgroundColor=this.id;
+    //var elements = document.getElementsByTagName('body')[0];
+    var elements = this.parentNode;
+    document.body.style.backgroundColor=this.id;
+    //elements.style.backgroundColor=this.nextSibling;
+    elements.nextSibling.nextSibling.firstChild.nodeValue=this.id+' button clicked here';
+    //alert();
+   
     // elements[1].style.backgroundColor=this.id;
     // elements[2].style.backgroundColor=this.id;
     // elements[3].style.backgroundColor=this.id;
@@ -239,6 +244,12 @@ function changeColor(){
 
 }
 document.addEventListener('DOMContentLoaded',myLoadFunction)
+
+/*element.nextSibling.nextSibling.style.backgroundColor='red';
+element.nextSibling.nextSibling.style.Circle='red';
+lement.nextSibling.nextSibling.firstChild.nodeValue='red color botton is clicked here';e
+element.nextSibling.nextSibling.style.addEventListener('red color botton is clicked here',myLoadFunction);*/
+
 
     
 
